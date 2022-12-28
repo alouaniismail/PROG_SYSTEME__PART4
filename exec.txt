@@ -1,0 +1,12 @@
+1->first programme:
+fork()
+si le retour==0 affiche le pid via (long)gedtpid() puis fait pause();
+ce pause() va laisser libre court a l'utilisateur de transferer un signal, ainsi le pere pourrait prendre la main dessus.(MAIS IL FAUT NOTAMMENT UN SIGNAL)
+on fait gcc + ./a.out & (en tache de fond)
+cela affiche un nouveau buffer avec le pid qu'on veut
+on fait kill -KILL/-STOP ce number
+=>ca va afficher ce que le pere ferait.
+PUIS, on doit faire crtl-Z pour sortir(), voilà.
+==================================
+2->second programme:
+de même presque, plus facile et plus compréhensible.
